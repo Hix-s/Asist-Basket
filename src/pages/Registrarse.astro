@@ -4,50 +4,37 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<div class="triangulo ">
-			<img class="logo" src="../../public/logo.svg"></img>
-		</div>
-		<div class="Iniciar items-center flex justify-center py-0 ">
-			<h1 class=" text-white">Iniciar Sesión</h1>
+		<div class="Iniciar items-center flex justify-center ">
+			<h1 class=" text-white">Registrarse</h1>
 		</div>
 		<div class="Rellenar">
 			<h1 class=" text-black">Correo Electronico</h1>
 			<input type="email" id="Correo" placeholder="ecbas@gmail.com" required/>
 			<h1 class=" text-black">Contraseña</h1>
 			<input type="password" id="Contraseña" placeholder="ecbas1234 " required/>
-			<button onclick="enviarDatos()" id="Enviar" class="text-white">Iniciar</button>
+			<h1 class=" text-black">Confirmar Contraseña</h1>
+			<input type="password" id="Contraseña" placeholder="ecbas1234 " required/>
+			<button onclick="enviarDatos()" id="Registrarse" class="text-white">Registrarse</button>
+			<div class="BarraRegistro">
+				<a href="." id="Volver" class="text-white">Iniciar Sesión</a>
+			</div>
 		</div>
-		<div class="BarraRegistro">
-			<a href="./Registrarse" id="Registrarse" class="text-white">Registrate aquí</a>
-		</div>
-		<img class='inicio' src="../../public/jugador.svg"></img>
+		
 	</main>
 </Layout>
 
 <style>
-	.triangulo {
-		width: 0;
-		height: 0;
-		border-right: 200px solid transparent;
-		border-top: 200px solid #F16E23;
-		display: flex;
-		z-index: -1;
-	}
-	.logo{
-		display: flex;
-		top: 7px;
-		position: absolute;
-		z-index: 2;
-	}
 	.Iniciar {
+		position: relative;
+		top: 100px;
 		width: 100%;
 		height: 70px;
-		top: 130px;
 		background-color: #1B3A61;
-		position: absolute;
 	}
 	.Rellenar{
 		display: flex;
+		top: 170px;
+		position: relative;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
@@ -59,24 +46,21 @@ import Layout from '../layouts/Layout.astro';
 		position: relative;
 		border-radius: 10px;
 	}
-	.inicio {
-		position: absolute; 		
-		bottom: 0;
-		right: 0;
-		width: 200px; 
-	}
-	#Enviar{
+
+	#Registrarse{
 		top: 20px;
 		width: 100px;
 		height: 40px;
 		background-color: #1B3A61;
 		position: relative;
 		border-radius: 10px;
+		
 	}
-	#Registrarse{
+	#Volver{
+		top: 100px;
+		display: flex;
 		position: relative;
-		top: 85px;
-		left: 60px;
+		justify-content: center;
 		width: 150px;
 		height: 40px;
 		background-color: #1B3A61;
@@ -84,16 +68,8 @@ import Layout from '../layouts/Layout.astro';
 		text-align: center;
 		line-height: 40px;
 		border-radius: 10px;
-		display: inline-block;
 		text-decoration: none;
 		cursor: pointer;
 		transition: background-color 0.3s ease;
-	}
-	.BarraRegistro{
-		width: 100%;
-		bottom: 0px;
-		height: 250px;
-		background-color: #F16E23;
-		position: absolute;
 	}
 </style>
